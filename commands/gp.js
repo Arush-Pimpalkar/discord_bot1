@@ -21,7 +21,7 @@ module.exports = {
             }
 
             const newEmbed = new Discord.MessageEmbed()
-                .setColor('#3AE6CA')
+                .setColor('#004444')
                 .setTitle('Ping Log')
                 .setDescription(lineline[lineline.length - 5] + '\n' + lineline[lineline.length - 4] + '\n' + lineline[lineline.length - 3] + '\n' + lineline[lineline.length - 2] + '\n' + lineline[lineline.length - 1])
             message.channel.send(newEmbed)
