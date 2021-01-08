@@ -63,9 +63,7 @@ client.on('message', message => {
             if (err) throw err;
         });
     }
-    else {
-        return;
-    }
+    if (guild === null || guild === undefined) { return }
 });
 
 client.login(process.env.token)
