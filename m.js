@@ -63,6 +63,9 @@ client.on('message', message => {
             if (err) throw err;
         });
     }
+    else {
+        return;
+    }
 });
 
 client.login(process.env.token)
