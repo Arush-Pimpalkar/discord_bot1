@@ -13,13 +13,13 @@ for (const file of commandfiles) {
 
 
 client.on('message', message => {
-    let server = message.guild.id
     const args = message.content.slice(prefix.length).split(/ +/);
     //  const command = args.shift().toLowerCase();
     const target = message.mentions.users.first()
     if (message.guild === null || message.guild === undefined) { return }
     if (target === undefined) { }
     else {
+        let server = message.guild.id
         var currentTime = new Date();
         var currentOffset = currentTime.getTimezoneOffset();
         var ISTOffset = 330;   // IST offset UTC +5:30 
@@ -52,9 +52,11 @@ client.on('message', message => {
         client.commands.get('embed').execute(message, args, Discord)
     }
     if (message.content === '-121') {
+        let server = message.guild.id
         message.channel.send(server)
     }
     if (message.mentions.everyone) {
+        let server = message.guild.id
         var d = new Date()
         var hour = d.getHours()
         var min = d.getMinutes()
