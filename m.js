@@ -17,6 +17,7 @@ client.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     //  const command = args.shift().toLowerCase();
     const target = message.mentions.users.first()
+    if (message.guild === null || message.guild === undefined) { return }
     if (target === undefined) { }
     else {
         var currentTime = new Date();
@@ -63,7 +64,7 @@ client.on('message', message => {
             if (err) throw err;
         });
     }
-    if (guild === null || guild === undefined) { return }
+
 });
 
 client.login(process.env.token)
