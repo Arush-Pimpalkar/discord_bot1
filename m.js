@@ -39,10 +39,13 @@ client.on('message', message => {
         client.commands.get('gp').execute(message, args)
     }
     if (message.content === '-time') {
-        var d = new Date()
-        var hour = d.getHours()
-        var min = d.getMinutes()
-        message.channel.send(`${hour}:${min}`)
+        var currentTime = new Date();
+        var currentOffset = currentTime.getTimezoneOffset();
+        var ISTOffset = 330;   // IST offset UTC +5:30 
+        var ISTTime = new Date(currentTime.getTime() + (ISTOffset + currentOffset) * 60000);
+        var hoursIST = ISTTime.getHours()
+        var minutesIST = ISTTime.getMinutes()
+        message.channel.send(`${hoursIST}:${minutesIST}`)
     }
     if (message.content === '-embed') {
         client.commands.get('embed').execute(message, args, Discord)
