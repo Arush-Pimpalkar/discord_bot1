@@ -30,7 +30,7 @@ client.on('message', message => {
         });
     }
     if (message.content === '-gp') {
-        message.react('🐍')
+        message.react('🆗')
         client.commands.get('gp').execute(message, args)
     }
     if (message.content === '-time') {
