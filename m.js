@@ -30,6 +30,7 @@ client.on('message', message => {
         });
     }
     if (message.content === '-gp') {
+
         message.react('🆗')
         client.commands.get('gp').execute(message, args)
     }
