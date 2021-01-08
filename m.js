@@ -19,13 +19,17 @@ client.on('message', message => {
     const target = message.mentions.users.first()
     if (target === undefined) { }
     else {
-        var d = new Date()
-        var hour = d.getHours()
-        var min = d.getMinutes()
+        var currentTime = new Date();
+        var currentOffset = currentTime.getTimezoneOffset();
+        var ISTOffset = 330;   // IST offset UTC +5:30 
+        var ISTTime = new Date(currentTime.getTime() + (ISTOffset + currentOffset) * 60000);
+        var hoursIST = ISTTime.getHours()
+        var minutesIST = ISTTime.getMinutes()
+
         const target = message.mentions.users.first();
         let memberTarget = message.guild.members.cache.get(target.id)
         console.log('@' + message.author.username + ' -> ' + '@' + memberTarget.displayName)
-        fs.appendFile(`${server}.txt`, ` @${message.author.username} -> @${memberTarget.displayName} at ${hour}:${min}\n`, function (err) {
+        fs.appendFile(`${server}.txt`, ` @${message.author.username} -> @${memberTarget.displayName} at ${hoursIST}:${minutesIST}\n`, function (err) {
             if (err) throw err;
         });
     }
