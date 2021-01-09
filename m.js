@@ -66,7 +66,21 @@ client.on('message', message => {
             if (err) throw err;
         });
     }
+    if (message.mentions.roles) {
+        var currentTime = new Date();
+        var currentOffset = currentTime.getTimezoneOffset();
+        var ISTOffset = 330;   // IST offset UTC +5:30 
+        var ISTTime = new Date(currentTime.getTime() + (ISTOffset + currentOffset) * 60000);
+        var hoursIST = ISTTime.getHours()
+        var minutesIST = ISTTime.getMinutes()
+        let targett = message.mentions.roles.first()
+        if (targett === undefined) { return; }
+        let memberTarget = message.guild.roles.cache.get(targett.id)
+        fs.appendFile(`${server}.txt`, ` @${message.author.username} -> @${memberTarget.name} at ${hoursIST}:${minutesIST}\n`, function (err) {
+            if (err) throw err;
+        });
 
+    }
 });
 
 client.login(process.env.token)
