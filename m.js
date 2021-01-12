@@ -14,7 +14,7 @@ for (const file of commandfiles) {
 
 client.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ +/);
-    //  const command = args.shift().toLowerCase();
+    var msct = message.content.split(" ")
     const target = message.mentions.users.first()
     if (message.guild === null || message.guild === undefined) { return }
     if (target === undefined) { }
