@@ -34,8 +34,7 @@ client.on('message', message => {
             if (err) throw err;
         });
     }
-    if (message.content === '-gp') {
-
+    if (msct.includes('-gp')) {
         message.react('🆗')
         client.commands.get('gp').execute(message, args)
     }

@@ -7,9 +7,12 @@ module.exports = {
         const fs = require('fs');
         const readline = require('readline');
         let server = message.guild.id
+        var msct = message.content.split(" ")
+        let msctnnumber = msct[1]
+        if (msctnnumber === undefined) { msctnnumber = 5 }
+        console.log(msctnnumber)
         async function processLineByLine() {
             const fileStream = fs.createReadStream(`${server}.txt`);
-
             const rl = readline.createInterface({
                 input: fileStream,
                 crlfDelay: 2
@@ -20,12 +23,16 @@ module.exports = {
                 lineline.push(line)
             }
 
+
+            var last4 = lineline.slice(-msctnnumber)
             const newEmbed = new Discord.MessageEmbed()
-                .setColor('#004444')
+                .setColor('#3AE6CA')
                 .setTitle('Ping Log')
-                .setDescription(lineline[lineline.length - 5] + '\n' + lineline[lineline.length - 4] + '\n' + lineline[lineline.length - 3] + '\n' + lineline[lineline.length - 2] + '\n' + lineline[lineline.length - 1])
+                .setDescription(last4)
             message.channel.send(newEmbed)
             console.log('``')
+
+
         }
 
         processLineByLine()
