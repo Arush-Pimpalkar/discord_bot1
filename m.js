@@ -61,7 +61,7 @@ client.on('message', message => {
         var ISTTime = new Date(currentTime.getTime() + (ISTOffset + currentOffset) * 60000);
         var hoursIST = ISTTime.getHours()
         var minutesIST = ISTTime.getMinutes()
-
+        let server = message.guild.id
         console.log('@' + message.author.username + ' -> @everyone')
         fs.appendFile(`${server}.txt`, ` @${message.author.username} -> @everyone at ${hoursIST}:${minutesIST} \n`, function (err) {
             if (err) throw err;
