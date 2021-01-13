@@ -55,13 +55,15 @@ client.on('message', message => {
         message.channel.send(server)
     }
     if (message.mentions.everyone) {
-        let server = message.guild.id
-        var d = new Date()
-        var hour = d.getHours()
-        var min = d.getMinutes()
+        var currentTime = new Date();
+        var currentOffset = currentTime.getTimezoneOffset();
+        var ISTOffset = 330;   // IST offset UTC +5:30 
+        var ISTTime = new Date(currentTime.getTime() + (ISTOffset + currentOffset) * 60000);
+        var hoursIST = ISTTime.getHours()
+        var minutesIST = ISTTime.getMinutes()
 
         console.log('@' + message.author.username + ' -> @everyone')
-        fs.appendFile(`${server}.txt`, ` @${message.author.username} -> @everyone at ${hour}:${min} \n`, function (err) {
+        fs.appendFile(`${server}.txt`, ` @${message.author.username} -> @everyone at ${hoursIST}:${minutesIST} \n`, function (err) {
             if (err) throw err;
         });
     }
