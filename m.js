@@ -40,7 +40,7 @@ client.on('message', message => {
     }
     if (message.author.id = 711571389014081588) {
         console.log('haha')
-        message.delete()
+     //   message.delete()
     }
 
 
