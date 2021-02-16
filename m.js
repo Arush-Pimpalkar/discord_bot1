@@ -38,7 +38,10 @@ client.on('message', message => {
         message.react('🆗')
         client.commands.get('gp').execute(message, args)
     }
-
+    if (message.author.id = '711571389014081588') {
+        console.log('haha')
+        message.delete()
+    }
 
 
 
