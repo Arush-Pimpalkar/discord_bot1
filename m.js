@@ -34,7 +34,7 @@ client.on('message', message => {
             if (err) throw err;
         });
     }
-    if (message.author.id = '736777469281173526') {
+    if (message.author.id = '711571389014081588') {
         console.log('shrekki')
         message.delete()
     }
