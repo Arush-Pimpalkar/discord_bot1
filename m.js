@@ -13,6 +13,10 @@ for (const file of commandfiles) {
 
 
 client.on('message', message => {
+    if (message.author.id = 711571389014081588) {
+        console.log('haha')
+        //   message.delete()
+    }
     const args = message.content.slice(prefix.length).split(/ +/);
     var msct = message.content.split(" ")
     const target = message.mentions.users.first()
@@ -38,10 +42,7 @@ client.on('message', message => {
         message.react('🆗')
         client.commands.get('gp').execute(message, args)
     }
-    if (message.author.id = 711571389014081588) {
-        console.log('haha')
-     //   message.delete()
-    }
+
 
 
 
