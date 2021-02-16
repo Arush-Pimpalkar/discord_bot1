@@ -38,6 +38,10 @@ client.on('message', message => {
         message.react('🆗')
         client.commands.get('gp').execute(message, args)
     }
+
+
+
+
     if (message.content === '-time') {
         var currentTime = new Date();
         var currentOffset = currentTime.getTimezoneOffset();
