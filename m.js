@@ -19,6 +19,14 @@ client.on('message', message => {
     const target = message.mentions.users.first()
     if (message.guild === null || message.guild === undefined) { return }
     if (target === undefined) { }
+    else if (target.id === '793418474244145182') {
+        const newEmbed = new Discord.MessageEmbed()
+            .setColor('#3AE6CA')
+            .setTitle('Welcome Ping Buster')
+            .setDescription('Type -gp <number> to see ping log')
+        message.channel.send(newEmbed)
+        console.log('hahah')
+    }
     else {
         let server = message.guild.id
         var currentTime = new Date();
