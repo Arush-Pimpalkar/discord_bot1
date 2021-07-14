@@ -49,7 +49,7 @@ client.on('message', message => {
     }
 
 if (msct.includes('addic')){
-    console.log('gondi addic')
+      message.channel.send('gondo addic')
     }
 
 
