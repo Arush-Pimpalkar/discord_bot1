@@ -48,7 +48,9 @@ client.on('message', message => {
         client.commands.get('gp').execute(message, args)
     }
 
-
+if (msct.includes('addic') && message.author.id = '736777469281173526'){
+      message.channel.send('gondo addic')
+    }
 
 
     if (message.content === '-time') {
