@@ -48,9 +48,7 @@ client.on('message', message => {
         client.commands.get('gp').execute(message, args)
     }
 
-if (msct.includes('addic')){
-      message.channel.send('gondo addic')
-    }
+
 
 
     if (message.content === '-time') {
