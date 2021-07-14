@@ -48,7 +48,7 @@ client.on('message', message => {
         client.commands.get('gp').execute(message, args)
     }
 
-if (message.includes('adic')){
+if (msct.includes('addic')){
     console.log('gondi addic')
     }
 
