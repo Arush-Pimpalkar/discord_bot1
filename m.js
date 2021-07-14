@@ -48,7 +48,9 @@ client.on('message', message => {
         client.commands.get('gp').execute(message, args)
     }
 
-
+if (message.includes('adic'){
+    console.log('gondi addic')
+    }
 
 
     if (message.content === '-time') {
