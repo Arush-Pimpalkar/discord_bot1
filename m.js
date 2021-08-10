@@ -49,7 +49,8 @@ client.on('message', message => {
     }
 
 
-
+if(message.author.id==='711571389014081588'){
+console.log('shrek')}
 
     if (message.content === '-time') {
         var currentTime = new Date();
