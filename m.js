@@ -48,7 +48,9 @@ client.on('message', message => {
         client.commands.get('gp').execute(message, args)
     }
 
-
+if (message.content === '-chemlink'){
+message.channel.send('https://us04web.zoom.us/j/5210071152')
+}
 
 
     if (message.content === '-time') {
