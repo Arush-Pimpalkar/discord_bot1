@@ -43,10 +43,6 @@ client.on('message', message => {
             if (err) throw err;
         });
     }
-         if (msct.includes('f')) {
-console.log('f')
-message.channel.send('f')
- }
     if (msct.includes('-gp')) {
         message.react('🆗')
         client.commands.get('gp').execute(message, args)
