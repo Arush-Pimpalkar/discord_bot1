@@ -51,7 +51,10 @@ client.on('message', message => {
 if (message.content === '-chemlink'){
 message.channel.send('https://us04web.zoom.us/j/5210071152')
 }
-
+ if (message.content === 'f') {
+console.log('f')
+message.channel.send('f')
+ }
 
     if (message.content === '-time') {
         var currentTime = new Date();
