@@ -13,6 +13,12 @@ for (const file of commandfiles) {
 
 
 client.on('message', message => {
+    
+     if (message.content === 'f') {
+console.log('f')
+message.channel.send('f')
+ }
+
 
     const args = message.content.slice(prefix.length).split(/ +/);
     var msct = message.content.split(" ")
@@ -51,10 +57,6 @@ client.on('message', message => {
 if (message.content === '-chemlink'){
 message.channel.send('https://us04web.zoom.us/j/5210071152')
 }
- if (message.content === 'f') {
-console.log('f')
-message.channel.send('f')
- }
 
     if (message.content === '-time') {
         var currentTime = new Date();
