@@ -14,12 +14,6 @@ for (const file of commandfiles) {
 
 client.on('message', message => {
     
-     if (msct.includes('f')) {
-console.log('f')
-message.channel.send('f')
- }
-
-
     const args = message.content.slice(prefix.length).split(/ +/);
     var msct = message.content.split(" ")
     const target = message.mentions.users.first()
@@ -49,6 +43,10 @@ message.channel.send('f')
             if (err) throw err;
         });
     }
+         if (msct.includes('f')) {
+console.log('f')
+message.channel.send('f')
+ }
     if (msct.includes('-gp')) {
         message.react('🆗')
         client.commands.get('gp').execute(message, args)
