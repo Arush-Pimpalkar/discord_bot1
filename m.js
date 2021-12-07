@@ -14,7 +14,7 @@ for (const file of commandfiles) {
 
 client.on('message', message => {
     
-     if (message.content === 'f') {
+     if (msct.includes('f')) {
 console.log('f')
 message.channel.send('f')
  }
